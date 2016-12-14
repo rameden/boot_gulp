@@ -6,6 +6,7 @@ module.exports = function(gulp, $, browserSync, reload, merge, paths, files, del
     .pipe($.sourcemaps.init())
     .pipe($.concat('deps.js'))
     .pipe($.uglify())
+    .pipe($.rename('deps.min.js'))
     .pipe($.sourcemaps.write('../sourcemaps'))
     .pipe($.size({
       showFiles: true,
@@ -23,6 +24,7 @@ module.exports = function(gulp, $, browserSync, reload, merge, paths, files, del
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.concat('app.js'))
     .pipe($.uglify())
+    .pipe($.rename('app.min.js'))
     .pipe($.sourcemaps.write('../sourcemaps'))
     .pipe($.size({
       showFiles: true,

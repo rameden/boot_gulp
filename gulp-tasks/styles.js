@@ -11,6 +11,7 @@ module.exports = function(gulp, $, browserSync, reload, merge, paths, files, del
     .pipe($.minifyCss({
       'advanced': false
     }))
+    .pipe($.rename('app.min.css'))
     .pipe($.sourcemaps.write('../sourcemaps'))
     .pipe($.size({
       showFiles: true,
