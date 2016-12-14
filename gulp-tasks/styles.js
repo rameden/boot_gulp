@@ -2,7 +2,6 @@ module.exports = function(gulp, $, browserSync, reload, merge, paths, files, del
   return function() {
     gulp.src('assets/css/src/app.less')
     .pipe($.changed(paths.styles.build))
-
     .pipe($.sourcemaps.init())
     .pipe($.less())
     .pipe($.autoprefixer({

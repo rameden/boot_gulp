@@ -18,10 +18,6 @@ module.exports = function(gulp, $, browserSync, reload, merge, paths, files, del
     var app = gulp.src(files.app)
     .pipe($.changed(paths.scripts.build))
     .pipe($.sourcemaps.init())
-    .pipe($.jshint({
-      "esnext": true
-    }))
-    .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.concat('app.js'))
     .pipe($.uglify())
     .pipe($.rename('app.min.js'))
